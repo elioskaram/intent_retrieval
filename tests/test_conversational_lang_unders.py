@@ -1,4 +1,5 @@
 import pytest
+from tests.config import subscription_key
 from api.conversational_lang_unders import ConversationalLanguageUnderstanding
 
 @pytest.fixture
@@ -6,7 +7,7 @@ def clu_instance():
     return ConversationalLanguageUnderstanding(
         endpoint="https://cooking102.cognitiveservices.azure.com/",
         api_version="2023-04-01",
-        subscription_key="21ab442c081c4c1992161e8f51675167"
+        subscription_key=subscription_key
     )
 
 def test_intent_recipe_search(clu_instance):
